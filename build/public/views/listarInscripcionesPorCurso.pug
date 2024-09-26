@@ -1,0 +1,31 @@
+extends ./index
+
+block contenido
+    .flex.justify-end.mb-4
+        ul.flex.space-x-4
+            span
+                a(href="/cursos/listarCursos" class="text-textoTIpo1 hover:text-gray-800") Volver al listado de cursos
+
+    .py-10
+        h1.text-center.text-2xl.font-extrabold= `Inscripciones en: ${curso.nombre}`
+
+        table.table-auto.w-full.mt-4
+            thead
+                tr
+                    th.text-left.uppercase.px-6.py-3 Estudiante
+                    th.text-left.uppercase.px-6.py-3 Nota
+                    th.text-left.uppercase.px-6.py-3 Fecha
+                    th.text-left.uppercase.px-6.py-3 Acción
+            tbody
+                each inscripcion in inscripciones
+                    tr
+                        td.px-6.py-4= inscripcion.estudiante.nombre + ' ' + inscripcion.estudiante.apellido
+                        td.px-6.py-4
+                            if inscripcion.nota !== 0
+                                = inscripcion.nota
+                            else
+                                | Sin calificar
+                        td.px-6.py-4= inscripcion.fecha
+                        td.px-6.py-4
+                            a(href=`/inscripciones/${curso.id}/${inscripcion.estudiante.id}/modificar`)
+                                img(src=" /img/btExam.png")

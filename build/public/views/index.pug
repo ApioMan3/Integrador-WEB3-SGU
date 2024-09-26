@@ -1,0 +1,35 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Proyecto Universidad | #{pagina}
+        link(rel="stylesheet", href="/css/app.css")
+    body 
+        nav.navbar
+            .container
+                a(href="/")
+                    img(src=" /img/logoChico.png")
+                ul
+                    li
+                        a(href="/estudiantes/listarEstudiantes") Estudiantes
+                    li
+                        a(href="/profesores/listarProfesores") Profesores
+                    li
+                        a(href="/cursos/listarCursos") Cursos
+                    li
+                        a(href="/inscripciones/listarInscripciones") Inscripciones
+        main.container
+            block contenido
+                    a(href="/estudiantes/listarEstudiantes")
+                        img(src=" /img/btEstudiantes.png")
+                    a(href="/profesores/listarProfesores")
+                        img(src=" /img/btProfesores.png")
+                    a(href="/cursos/listarCursos")
+                        img(src=" /img/btCursos.png")
+                    a(href="/inscripciones/listarInscripciones")
+                        img(src=" /img/btInscripciones.png")
+                    a(href="https://github.com/ApioMan3" target="_blank")
+                        img(src=" /img/btGit.png")
+
+            block scripts
