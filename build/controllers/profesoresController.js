@@ -66,7 +66,7 @@ const borrar = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
     catch (err) {
         if (err instanceof Error) {
-            res.status(500).json({ mensaje: err.message });
+            res.status(500).json({ mensaje: 'El profesor se encuentra asignado a un curso.' });
         }
     }
 });

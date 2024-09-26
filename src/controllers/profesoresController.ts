@@ -62,7 +62,7 @@ export const borrar = async (req: Request, res: Response) => {
         res.json({ mensaje: 'Profesor eliminado' });
     } catch (err: unknown) {
         if (err instanceof Error) {
-            res.status(500).json({ mensaje: err.message });
+            res.status(500).json({ mensaje: 'No se ha podido eliminar el profesor debido a que se encuentra asignado a un curso.'});
         }
     }
 };
